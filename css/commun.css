@@ -104,3 +104,20 @@ th {
 	text-decoration: none;
 	margin-right: 10px;
 }
+
+.numeros {
+	text-align: center;
+	margin: 20px 0 40px 0;
+	background-color: lightgrey;
+}
+
+.numeros strong {
+	display: inline-block;
+	font-size: 40px;
+	margin: 10px;
+}
+
+.detail {
+	padding: 15px;
+	background-color: lightyellow;
+}

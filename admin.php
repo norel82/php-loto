@@ -29,34 +29,43 @@ $dates = $pdo->query($sql);
             <p>
                 <a href="date.php">Ajouter une date</a>
             </p>
-
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                </tr>
-
-                <?php while ($date = $dates->fetch()) { ?>
-
+            <form method="post" action="resultats.php">
+                <table>
                     <tr>
-                        <td><?php echo $date['id']; ?></td>
-
-                        <td><?php echo $date['date']; ?></td>
-
-                        <td>
-                            <a href="voir-date.php?id=<?php echo $date['id']; ?>" class="voir">
-                                Voir
-                            </a>
-
-                            <a href="supprimer-date.php?id=<?php echo $date['id']; ?>" class="supprimer">
-                                Supprimer
-                            </a>
-                        </td>
+                        <th>Sélection</th>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Actions</th>
                     </tr>
 
-                <?php } ?>
-            </table>
+                    <?php while ($date = $dates->fetch()) { ?>
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="dates[]" value="<?php echo $date['id']; ?>">
+                            </td>
+
+                            <td><?php echo $date['id']; ?></td>
+
+                            <td><?php echo $date['date']; ?></td>
+
+                            <td>
+                                <a href="voir-date.php?id=<?php echo $date['id']; ?>" class="voir">
+                                    Voir
+                                </a>
+
+                                <a href="supprimer-date.php?id=<?php echo $date['id']; ?>" class="supprimer">
+                                    Supprimer
+                                </a>
+                            </td>
+                        </tr>
+
+                    <?php } ?>
+                </table>
+                <p>
+                    <input type="submit" value="Voir les numéros">
+                </p>
+            </form>
         </div>
     </div>
 
