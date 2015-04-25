@@ -1,4 +1,10 @@
-<?php include "config/database.php"; ?>
+<?php
+include "config/database.php";
+
+$sql = "SELECT * FROM dates";
+$dates = $pdo->query($sql);
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
@@ -16,62 +22,43 @@
 
     <?php include "includes/entete.php"; ?>
 
-    <?php
-    if (isset($_POST['date'])) {
-        $date = $_POST['date'];
-
-        $sql = "INSERT INTO dates (date) VALUES ('$date')";
-        $pdo->exec($sql);
-
-        // On découpe la date
-        $dateDecoupee = explode("-", $date);
-
-        // On récupère année, mois et jour
-        $annee = $dateDecoupee[0];
-        $mois = $dateDecoupee[1];
-        $jour = $dateDecoupee[2];
-
-        // On enlève les 2 premiers chiffres de l'année
-        $anneeCourte = substr($annee, 2);
-
-        $resultatAnnee = $anneeCourte - 49;
-
-        // Si le résultat est négatif
-        if ($resultatAnnee < 0) {
-            $resultatAnnee = $resultatAnnee + 49;
-        }
-
-        $resultatDate = $mois + $jour;
-    }
-    ?>
-
     <div class="global">
         <div class="page">
-            <h2>Calcul des numéros</h2>
-            <form method="post" action="">
-                <input type="date" name="date" value="<?php echo $date ?>">
-                <input type="submit" value="Valider">
-            </form>
+            <h2>Dates enregistrées</h2>
+
+            <p>
+                <a href="date.php">Ajouter une date</a>
+            </p>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+
+                <?php while ($date = $dates->fetch()) { ?>
+
+                    <tr>
+                        <td><?php echo $date['id']; ?></td>
+
+                        <td><?php echo $date['date']; ?></td>
+
+                        <td>
+                            <a href="voir-date.php?id=<?php echo $date['id']; ?>" class="voir">
+                                Voir
+                            </a>
+
+                            <a href="supprimer-date.php?id=<?php echo $date['id']; ?>" class="supprimer">
+                                Supprimer
+                            </a>
+                        </td>
+                    </tr>
+
+                <?php } ?>
+            </table>
         </div>
     </div>
-
-    <?php if (isset($_POST['date'])) { ?>
-
-        <div class="resultats">
-
-            <div class="resultat">
-                <span>Année - 49</span>
-                <strong><?php echo $resultatAnnee; ?></strong>
-            </div>
-
-            <div class="resultat">
-                <span>Mois + Jour</span>
-                <strong><?php echo $resultatDate; ?></strong>
-            </div>
-
-        </div>
-
-    <?php } ?>
 
     <?php include "includes/pied-page.php"; ?>
 

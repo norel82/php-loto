@@ -73,3 +73,34 @@ body {
 .resultat strong {
 	font-size: 30px;
 }
+
+th,
+td {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+th {
+	background-color: #f3f3f3;
+}
+
+.show {
+	color: white;
+	background-color: red;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+.supprimer {
+	color: white;
+	background-color: red;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+.voir {
+	color: white;
+	background-color: #337ab7;
+	padding: 5px 10px;
+	text-decoration: none;
+	margin-right: 10px;
+}
