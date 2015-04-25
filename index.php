@@ -13,15 +13,7 @@
 
 <body>
 
-    <div class="entete">
-        <h1>PHP Loto</h1>
-
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/loto.php">Jouer</a>
-            <a href="/connexion.php">Connexion</a>
-        </nav>
-    </div>
+    <?php include "includes/entete.php"; ?>
 
     <div class="global">
         <div class="page">
@@ -30,9 +22,7 @@
         </div>
     </div>
 
-    <div class="pied-page">
-        en cours
-    </div>
+    <?php include "includes/pied-page.php"; ?>
 
 </body>
 
