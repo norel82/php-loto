@@ -1,3 +1,4 @@
+<?php include "config/database.php"; ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
@@ -18,6 +19,9 @@
     <?php
     if (isset($_POST['date'])) {
         $date = $_POST['date'];
+
+        $sql = "INSERT INTO dates (date) VALUES ('$date')";
+        $pdo->exec($sql);
 
         // On découpe la date
         $dateDecoupee = explode("-", $date);
