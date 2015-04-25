@@ -51,3 +51,25 @@ body {
 	color: #777;
 	text-align: center;
 }
+
+.resultats {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.resultat {
+	display: inline-block;
+	width: 150px;
+	padding: 20px;
+	margin: 10px;
+	background-color: white;
+}
+
+.resultat span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.resultat strong {
+	font-size: 30px;
+}
