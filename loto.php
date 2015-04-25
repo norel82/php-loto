@@ -1,3 +1,4 @@
+<?php include "includes/fonctions.php"; ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
@@ -41,18 +42,6 @@
 
 
     <?php include "includes/pied-page.php"; ?>
-
-
-    <?php
-    function genererGrille()
-    {
-        $nombres = array();
-        while (count($nombres) < 6) {
-            $nombres[] = rand(1, 49);
-        }
-        return $nombres;
-    }
-    ?>
 </body>
 
 </html>
