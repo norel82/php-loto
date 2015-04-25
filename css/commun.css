@@ -1,0 +1,53 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #e5e5e5;
+}
+
+.global {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+}
+
+.page {
+	width: 960px;
+	margin: auto;
+	background: white;
+	padding: 20px;
+}
+
+.entete {
+	width: 960px;
+	margin: auto;
+	padding: 20px;
+	background: #f3f3f3;
+	color: #333;
+}
+
+.entete h1 {
+	margin: 0;
+}
+
+.entete nav {
+	margin-top: 15px;
+}
+
+.entete nav a {
+	color: #333;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+.entete nav a:hover {
+	text-decoration: underline;
+}
+
+.pied-page {
+	padding: 20px;
+	background: #f3f3f3;
+	color: #777;
+	text-align: center;
+}
