@@ -1,3 +1,4 @@
+<?php include "config/database.php"; ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
@@ -18,6 +19,12 @@
     <div class="global">
         <div class="page">
             <h1>connection</h1>
+
+            <?php
+            if ($pdo) {
+                echo "Connexion à la base de données réussie !";
+            }
+            ?>
         </div>
     </div>
 
